@@ -239,14 +239,6 @@ class FavoritesPage extends StatelessWidget {
                   ))
                 ],
               ),
-              // leading: Icon(
-              //   Icons.favorite,
-              //   color: Theme.of(context).colorScheme.background,
-              // ),
-              // title: Text(
-              //   pair.asLowerCase,
-              //   style: TextStyle(color: Theme.of(context).colorScheme.background),
-              // ),
             ),
           ),
       ],
@@ -254,6 +246,7 @@ class FavoritesPage extends StatelessWidget {
   }
 }
 
+// Adding the drawer to Navbar, not completly correct.
 // import 'package:english_words/english_words.dart';
 // import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
