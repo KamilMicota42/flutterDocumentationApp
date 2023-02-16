@@ -45,6 +45,13 @@ class MyAppState extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void deleteFromFavorites(word) {
+    if (favorites.contains(word)) {
+      favorites.remove(word);
+    }
+    notifyListeners();
+  }
 }
 
 class MyHomePage extends StatefulWidget {
@@ -207,16 +214,39 @@ class FavoritesPage extends StatelessWidget {
           Card(
             color: Theme.of(context).colorScheme.primary,
             child: ListTile(
-              leading: Icon(
-                Icons.favorite, 
-                color: Theme.of(context).colorScheme.background,
+              subtitle: Column(
+                children: <Widget>[
+                  Container(
+                      child: Row(
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {
+                          appState.deleteFromFavorites(pair);
+                        },
+                        icon: Icon(
+                          Icons.favorite,
+                          color: Theme.of(context).colorScheme.background,
+                        ),
+                      ),
+                      Text(
+                        pair.asPascalCase,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.background,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ))
+                ],
               ),
-              title: Text(
-                pair.asLowerCase,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.background
-                ),
-              ),
+              // leading: Icon(
+              //   Icons.favorite,
+              //   color: Theme.of(context).colorScheme.background,
+              // ),
+              // title: Text(
+              //   pair.asLowerCase,
+              //   style: TextStyle(color: Theme.of(context).colorScheme.background),
+              // ),
             ),
           ),
       ],
