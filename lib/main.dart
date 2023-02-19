@@ -194,14 +194,20 @@ class FavoritesPage extends StatelessWidget {
 
     if (appState.favorites.isEmpty) {
       return Center(
-        child: Text('No favorites yet.'),
+        child: Text(
+          'No favorites yet.',
+          style: TextStyle(
+                fontSize: 40,
+                color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
       );
     }
 
     return ListView(
       children: [
         Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(10),
           child: Text(
             'You have ' '${appState.favorites.length} favorites:',
             style: TextStyle(
@@ -217,11 +223,14 @@ class FavoritesPage extends StatelessWidget {
               subtitle: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       Icon(
                         Icons.favorite,
                         color: Theme.of(context).colorScheme.background,
+                      ),
+                      SizedBox(
+                        width: 15,
                       ),
                       Text(
                         pair.asPascalCase,
@@ -230,6 +239,7 @@ class FavoritesPage extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
+                      Spacer(),
                       IconButton(
                         onPressed: () {
                           appState.deleteFromFavorites(pair);
@@ -240,7 +250,7 @@ class FavoritesPage extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
