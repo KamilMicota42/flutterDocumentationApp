@@ -215,18 +215,13 @@ class FavoritesPage extends StatelessWidget {
             color: Theme.of(context).colorScheme.primary,
             child: ListTile(
               subtitle: Column(
-                children: <Widget>[
-                  Container(
-                      child: Row(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      IconButton(
-                        onPressed: () {
-                          appState.deleteFromFavorites(pair);
-                        },
-                        icon: Icon(
-                          Icons.favorite,
-                          color: Theme.of(context).colorScheme.background,
-                        ),
+                      Icon(
+                        Icons.favorite,
+                        color: Theme.of(context).colorScheme.background,
                       ),
                       Text(
                         pair.asPascalCase,
@@ -235,8 +230,17 @@ class FavoritesPage extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
+                      IconButton(
+                        onPressed: () {
+                          appState.deleteFromFavorites(pair);
+                        },
+                        icon: Icon(
+                          Icons.delete,
+                          color: Theme.of(context).colorScheme.background,
+                        ),
+                      ),
                     ],
-                  ))
+                  )
                 ],
               ),
             ),
