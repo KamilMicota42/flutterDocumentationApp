@@ -6,5 +6,6 @@ This project is a starting point for a Flutter application.
 
 My first flutter project from official flutter documentation with some changes and additional functionalities.
 
-![image](https://user-images.githubusercontent.com/85360923/219973899-e127d2d0-6732-4855-bae3-78aea35d1667.png)
+![image](https://user-images.githubusercontent.com/85360923/219980793-8a8e2970-5a11-424c-b1ec-9787d081b43d.png)
+
 
